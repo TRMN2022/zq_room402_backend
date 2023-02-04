@@ -12,6 +12,8 @@ from rest_framework.views import APIView
 
 # ---------------------------用户类(初始注册账号)---------------------------------
 # 列表视图
+class UserInfoView(APIView):
+    # 查询所有用户的用户名和密码
 
     # 创建一个用户
     def post(self, request):
