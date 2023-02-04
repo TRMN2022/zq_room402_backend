@@ -12,25 +12,6 @@ from rest_framework.views import APIView
 
 # ---------------------------用户类(初始注册账号)---------------------------------
 # 列表视图
-class UserInfoView(APIView):
-    # 查询所有用户的用户名和密码
-    def get(self, request):
-        # 1.查询所有用户信息
-        users = UserInfo.objects.all()
-
-        # 2.数据转换
-        user_list = []
-        for user in users:
-            user_dict = {
-                "id": user.id,
-                "username": user.username,
-                "password": user.password,
-                "certification": user.certification
-            }
-            user_list.append(user_dict)
-
-        # 3.返回响应
-        return http.JsonResponse(user_list, safe=False)
 
     # 创建一个用户
     def post(self, request):
